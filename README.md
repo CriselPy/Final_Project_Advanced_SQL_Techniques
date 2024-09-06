@@ -2,13 +2,12 @@
 
 ![MySQL](https://img.shields.io/badge/MySQL-v8.0-blue.svg)
 ![Workbench](https://img.shields.io/badge/Workbench-v8.0.25-lightblue.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
+![License](https://img.shields.io/badge/license-MIT-purple.svg)
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Cristina_Ortega-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/cristina-ortega-451750275/)
 [![GitHub](https://img.shields.io/badge/GitHub-CriselPy-pink?logo=github&style=flat-square)](https://github.com/CriselPy)
 [![GitHub stars](https://img.shields.io/github/stars/CriselPy/Final_Project_Advanced_SQL_Techniques?style=social&label=Stars)](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/stargazers)
 ![Build Status](https://img.shields.io/github/workflow/status/CriselPy/Final_Project_Advanced_SQL_Techniques/CI)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 
 ## 📋 Table of Contents
