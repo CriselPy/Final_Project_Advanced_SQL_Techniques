@@ -1,40 +1,188 @@
-# Proyecto de SQL Avanzado
+# Advanced SQL Techniques - Final Project
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/tu_usuario/tu_repositorio/build.yml?branch=main)](https://github.com/tu_usuario/tu_repositorio/actions)
-[![Coverage Status](https://coveralls.io/repos/github/tu_usuario/tu_repositorio/badge.svg?branch=main)](https://coveralls.io/github/tu_usuario/tu_repositorio?branch=main)
-![SQL Files](https://img.shields.io/badge/SQL%20Files-Available-green)
+![MySQL](https://img.shields.io/badge/MySQL-v8.0-blue.svg)
+![Workbench](https://img.shields.io/badge/Workbench-v8.0.25-lightblue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
 
-## Descripción
+## 📋 Table of Contents
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Database Setup](#database-setup)
+- [Exercises](#exercises)
+  - [Exercise 1: Using Joins](#exercise-1-using-joins)
+  - [Exercise 2: Creating a View](#exercise-2-creating-a-view)
+  - [Exercise 3: Creating a Stored Procedure](#exercise-3-creating-a-stored-procedure)
+  - [Exercise 4: Using Transactions](#exercise-4-using-transactions)
+- [Resources](#resources)
+- [Contributing](#contributing)
+- [License](#license)
 
-Este proyecto incluye una serie de ejercicios avanzados en SQL utilizando MySQL, cubriendo temas como:
+## 📖 Project Overview
 
-- Consultas SQL con joins
-- Creación y uso de vistas
-- Creación y gestión de procedimientos almacenados
-- Uso de transacciones para asegurar la integridad de los datos
+This project is part of the "Advanced SQL Techniques" course, where we explore complex SQL operations in MySQL. The exercises included here demonstrate the use of joins, views, stored procedures, and transactions to solve practical data analysis problems based on datasets from the city of Chicago.
 
-## Ejercicios
+## 🛠 Technologies Used
 
-1. **Uso de Joins**
-   - Consultas para listar nombres de escuelas, nombres de comunidades, asistencia promedio y delitos en escuelas.
+- **MySQL 8.0**: A relational database management system used for storing, retrieving, and managing the data.
+- **MySQL Workbench 8.0.25**: A unified visual tool for database architects, developers, and DBAs.
+- **IBM Skills Network Labs**: A virtual lab environment used for database management and SQL queries.
 
-2. **Creación de una Vista**
-   - Creación de una vista para mostrar información específica de escuelas con nombres de columnas personalizados.
+## ⚙️ Installation
 
-3. **Creación de un Procedimiento Almacenado**
-   - Procedimiento para actualizar el puntaje de líderes y el ícono asociado, con manejo de excepciones y transacciones.
+To run this project locally, you need to have MySQL and MySQL Workbench installed on your system.
 
-## Cómo Ejecutar
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/yourusername/advanced-sql-techniques.git
+   cd advanced-sql-techniques
+   
+## ⚙️ Set up MySQL
 
-1. Carga los archivos SQL en tu entorno MySQL.
-2. Ejecuta los scripts para crear tablas, vistas y procedimientos almacenados.
-3. Realiza las pruebas y verifica los resultados.
+1. **Set up MySQL:**
+   - Make sure MySQL service is running on your local machine.
+   - Open MySQL Workbench and connect to your local MySQL server.
 
-## Contribuciones
+2. **Import the SQL file:**
+   - In MySQL Workbench, go to `File > Open SQL Script` and select the provided `.sql` file.
+   - Execute the script to set up the database and tables.
 
-Si tienes sugerencias o mejoras para este proyecto, por favor abre un [issue](https://github.com/tu_usuario/tu_repositorio/issues) o envía un pull request.
+## 🗄️ Database Setup
 
-## Licencia
+This project uses a database named `Mysql_Learners`. The database contains three tables:
 
-Este proyecto está licenciado bajo la [Licencia MIT](https://opensource.org/licenses/MIT).
+- `chicago_public_schools`
+- `chicago_socioeconomic_data`
+- `chicago_crime`
+
+The data is imported using SQL dump files, which are executed as part of the database setup.
+
+## 📚 Exercises
+
+### Exercise 1: Using Joins
+
+In this exercise, we explore how to join multiple tables to extract meaningful insights from the data.
+
+#### Question 1: List School Names, Community Names, and Average Attendance
+```sql
+SELECT P_SL.NAME_OF_SCHOOL, P_SL.COMMUNITY_AREA_NAME, P_SL.AVERAGE_STUDENT_ATTENDANCE
+FROM chicago_public_schools AS P_SL
+LEFT JOIN chicago_socioeconomic_data AS socio
+ON P_SL.COMMUNITY_AREA_NAME = socio.COMMUNITY_AREA_NAME
+WHERE socio.HARDSHIP_INDEX = 98;
+```
+#### Question 2: List Crimes That Took Place at a School
+```sql
+SELECT ch_crime.CASE_NUMBER, ch_crime.PRIMARY_TYPE, socio.COMMUNITY_AREA_NAME
+FROM chicago_crime AS ch_crime
+LEFT JOIN chicago_socioeconomic_data AS socio
+ON ch_crime.COMMUNITY_AREA_NUMBER = socio.COMMUNITY_AREA_NUMBER
+WHERE ch_crime.LOCATION_DESCRIPTION LIKE '%SCHOOL%'
+ORDER BY ch_crime.CASE_NUMBER, socio.COMMUNITY_AREA_NAME;
+
+```
+### Exercise 2: Creating a View
+
+Create a view to ensure privacy and restrict access to sensitive information in the database.
+
+#### Creating the View
+```sql
+CREATE VIEW Chicago_p_schools_v AS
+SELECT NAME_OF_SCHOOL AS School_Name,
+       Safety_Icon AS Safety_Rating,
+       Family_Involvement_Icon AS Family_Rating,
+       Environment_Icon AS Environment_Rating,
+       Instruction_Icon AS Instruction_Rating,
+       Leaders_Icon AS Leaders_Rating,
+       Teachers_Icon AS Teachers_Rating
+FROM chicago_public_schools;
+```
+### Exercise 3: Creating a Stored Procedure
+
+This exercise focuses on creating a stored procedure to update scores and their corresponding icons in the `chicago_public_schools` table.
+
+#### Creating the Stored Procedure
+
+The following SQL script creates a stored procedure that updates the `Leaders_Score` for a given school. It uses parameters to accept the school ID and the new score, which is then used to update the school's leader score in the database.
+
+```sql
+DELIMITER $$
+CREATE PROCEDURE UPDATE_LEADERS_SCORE(IN in_School_ID INT, IN in_Leader_Score INT)
+BEGIN
+    UPDATE chicago_public_schools
+    SET Leaders_Score = in_Leader_Score
+    WHERE School_ID = in_School_ID;
+END $$
+DELIMITER ;
+```
+### Exercise 4: Using Transactions
+
+In this exercise, we'll modify a stored procedure to handle transactions and ensure data integrity. 
+
+#### Creating the Stored Procedure with Transactions
+
+Here's how you can create a stored procedure to update the `Leaders_Icon` based on the leader's score, with transaction handling to maintain data consistency:
+
+```sql
+DELIMITER $$
+CREATE PROCEDURE UPDATE_LEADERS_ICON(IN in_School_ID INT, IN in_Leader_Score INT)
+BEGIN
+    -- Exception handling
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK;  -- Undo changes if an error occurs
+        RESIGNAL;  -- Propagate the error
+    END;
+
+    START TRANSACTION;  -- Begin a transaction
+
+    -- Conditional logic to update Leaders_Icon based on score
+    IF in_Leader_Score >= 0 AND in_Leader_Score <= 19 THEN
+        UPDATE chicago_public_schools
+        SET Leaders_Icon = 'Very weak'
+        WHERE School_ID = in_School_ID;
+    ELSEIF in_Leader_Score <= 39 THEN
+        UPDATE chicago_public_schools
+        SET Leaders_Icon = 'Weak'
+        WHERE School_ID = in_School_ID;
+    ELSEIF in_Leader_Score <= 59 THEN
+        UPDATE chicago_public_schools
+        SET Leaders_Icon = 'Average'
+        WHERE School_ID = in_School_ID;
+    ELSEIF in_Leader_Score <= 79 THEN
+        UPDATE chicago_public_schools
+        SET Leaders_Icon = 'Strong'
+        WHERE School_ID = in_School_ID;
+    ELSEIF in_Leader_Score <= 99 THEN
+        UPDATE chicago_public_schools
+        SET Leaders_Icon = 'Very strong'
+        WHERE School_ID = in_School_ID;
+    ELSE
+        -- Signal an error if the score is out of range
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Invalid value for in_Leader_Score. Value must be between 0 and 99.';
+    END IF;
+
+    COMMIT;  -- Commit the transaction if all goes well
+END $$
+DELIMITER ;
+
+```
+## 📚 Resources
+
+- [MySQL 8.0 Documentation](https://dev.mysql.com/doc/refman/8.0/en/)
+- [MySQL Workbench Manual](https://dev.mysql.com/doc/workbench/en/)
+- [IBM Skills Network Labs](https://skills.network/)
+
+## 🤝 Contributing
+
+Contributions are welcome! Please fork this repository, make your changes, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+
+## ✍️ Author
+
+This project was completed by [Crisel Nublo🪻](https://github.com/crisel-nublo).
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
