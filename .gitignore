@@ -1,0 +1,32 @@
+# Ignorar archivos de log
+*.log
+
+# Ignorar archivos temporales del sistema
+*.tmp
+*.swp
+*.swo
+
+# Ignorar archivos y carpetas del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar carpetas de herramientas IDE
+.vscode/
+.idea/
+
+# Ignorar archivos generados por el sistema
+*.sql.gz
+*.dump
+
+# Ignorar archivos y carpetas específicas
+sql/
+*.sql
+*.sqlite
+
+# Ignorar archivos de configuración personal
+*.env
+*.local
+
+# Ignorar archivos específicos a no incluir
+*.backup
+*.bak
