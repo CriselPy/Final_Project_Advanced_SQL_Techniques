@@ -4,12 +4,12 @@
 ![Workbench](https://img.shields.io/badge/Workbench-v8.0.25-lightblue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
-![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)
-![GitHub](https://img.shields.io/badge/GitHub-yourusername-success?logo=github)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/yourrepo?style=social)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-@cristina-ortega-451750275-blue?logo=linkedin&style=flat-square)]([https://www.linkedin.com/in/yourusername](https://www.linkedin.com/in/cristina-ortega-451750275/))
-[![GitHub](https://img.shields.io/badge/GitHub-@CriselPy-lilac?logo=github&style=flat-square)](https://github.com/CriselPy)
-[![GitHub stars](https://img.shields.io/[github/stars/CriselPy/Final_Project_Advanced_SQL_Techniques?style=social&label=Stars)](https://github/CriselPy/Final_Project_Advanced_SQL_Techniques/stargazers)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Cristina_Ortega-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/cristina-ortega-451750275/)
+[![GitHub](https://img.shields.io/badge/GitHub-CriselPy-black?logo=github&style=flat-square)](https://github.com/CriselPy)
+[![GitHub stars](https://img.shields.io/github/stars/CriselPy/Final_Project_Advanced_SQL_Techniques?style=social&label=Stars)](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/stargazers)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Cristina_Ortega-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/cristina-ortega-451750275/)
+[![GitHub](https://img.shields.io/badge/GitHub-CriselPy-black?logo=github&style=flat-square)](https://github.com/CriselPy)
+[![GitHub stars](https://img.shields.io/github/stars/CriselPy/Final_Project_Advanced_SQL_Techniques?style=social&label=Stars)](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/stargazers)
 
 ## 📋 Table of Contents
 - [Project Overview](#project-overview)
