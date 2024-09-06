@@ -19,6 +19,7 @@
   - [Example 1: Query to Get School Data with Safety Ratings](#example-1-query-to-get-school-data-with-safety-ratings)
   - [Example 2: Updating School Leadership Score](#example-2-updating-school-leadership-score)
 - [Resources](#resources)
+- [File and Interaction](#file-and-interaction)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -188,13 +189,36 @@ CALL UPDATE_LEADERS_SCORE(101, 85);
 - [Creating and Using Views](https://dev.mysql.com/doc/refman/8.0/en/views.html)
 - [Stored Procedures](https://dev.mysql.com/doc/refman/8.0/en/stored-routines.html)
 
+## 📂 Exercise File and Interaction Data
+
+To complete the exercises and setups described in this project, you can use the provided SQL file. This file contains the database structure and the necessary data to run the queries and stored procedures.
+
+### Link to the File
+
+- [final_project.sql](https://github.com/CriselPy/advanced-sql-techniques/blob/main/final_project.sql)
+
+### How to Interact with the File
+
+1. **Download the file:**
+   - Click the link to download the `final_project.sql` file to your local machine.
+
+2. **Import the file into MySQL Workbench:**
+   - Open MySQL Workbench and connect to your MySQL server.
+   - Go to `File > Open SQL Script` and select the `final_project.sql` file.
+   - Execute the script to create the tables and load the data into your database.
+
+3. **Run Exercises:**
+   - Use the queries and procedures provided in the "Exercises" section to interact with the data.
+
 ## 🤝 Contributing
 
-Contributions are welcome! Please fork this repository, make your changes, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
+This project is a personal solution to an exercise from the Advanced SQL Techniques course provided by IBM. Since it was worked on individually, there are no external contributions included. However, if you have suggestions to improve the exercises or find errors in the queries and procedures, please feel free to open an issue to discuss potential improvements.
+
+If you wish to share your own solutions or approaches to these exercises, you are welcome to do so in the repository comments. I appreciate any constructive feedback that can help enhance the content.
 
 ## ✍️ Author
 
-This project was completed by [Crisel Nublo🪻](https://github.com/crisel-nublo).
+This project was completed by #[Crisel Nublo🪻](https://github.com/crisel-nublo).
 
 ## 📜 License
 
