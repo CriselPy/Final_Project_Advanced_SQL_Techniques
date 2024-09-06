@@ -103,9 +103,6 @@ FROM chicago_public_schools;
 This exercise focuses on creating a stored procedure to update scores and their corresponding icons in the `chicago_public_schools` table.
 
 #### Creating the Stored Procedure
-
-The following SQL script creates a stored procedure that updates the `Leaders_Score` for a given school. It uses parameters to accept the school ID and the new score, which is then used to update the school's leader score in the database.
-
 ```sql
 DELIMITER $$
 CREATE PROCEDURE UPDATE_LEADERS_SCORE(IN in_School_ID INT, IN in_Leader_Score INT)
@@ -118,11 +115,9 @@ DELIMITER ;
 ```
 ### Exercise 4: Using Transactions
 
-In this exercise, we'll modify a stored procedure to handle transactions and ensure data integrity. 
+Modify the stored procedure to handle transactions and ensure data integrity.
 
 #### Creating the Stored Procedure with Transactions
-
-Here's how you can create a stored procedure to update the `Leaders_Icon` based on the leader's score, with transaction handling to maintain data consistency:
 
 ```sql
 DELIMITER $$
@@ -166,6 +161,19 @@ BEGIN
     COMMIT;  -- Commit the transaction if all goes well
 END $$
 DELIMITER ;
+```
+## 💡 Usage Examples
+
+Provide sample queries or use cases that show how to apply the exercises or stored procedures in real scenarios.
+
+#### Example 1: Query to Get School Data with Safety Ratings
+```sql
+SELECT * FROM Chicago_p_schools_v WHERE Safety_Rating = 'Strong';
+```
+#### Example 2: Updating School Leadership Score
+```sql
+-- Call the stored procedure to update the leadership score of a school with ID 101 to 85
+CALL UPDATE_LEADERS_SCORE(101, 85);
 
 ```
 ## 📚 Resources
@@ -173,6 +181,9 @@ DELIMITER ;
 - [MySQL 8.0 Documentation](https://dev.mysql.com/doc/refman/8.0/en/)
 - [MySQL Workbench Manual](https://dev.mysql.com/doc/workbench/en/)
 - [IBM Skills Network Labs](https://skills.network/)
+- [SQL Transactions](https://dev.mysql.com/doc/refman/8.0/en/commit.html)
+- [Creating and Using Views](https://dev.mysql.com/doc/refman/8.0/en/views.html)
+- [Stored Procedures](https://dev.mysql.com/doc/refman/8.0/en/stored-routines.html)
 
 ## 🤝 Contributing
 
