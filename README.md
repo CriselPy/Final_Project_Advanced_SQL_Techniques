@@ -224,7 +224,7 @@ If you wish to share your own solutions or approaches to these exercises, you ar
 
 ## ✍️ Author
 
-This project was completed by # [Crisel Nublo🪻](https://github.com/crisel-nublo).
+This project was completed by [# Crisel Nublo🪻](https://github.com/crisel-nublo).
 
 ## 📜 License
 
