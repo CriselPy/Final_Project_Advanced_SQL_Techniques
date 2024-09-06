@@ -5,10 +5,9 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Cristina_Ortega-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/cristina-ortega-451750275/)
-[![GitHub](https://img.shields.io/badge/GitHub-CriselPy-lilac?logo=github&style=flat-square)](https://github.com/CriselPy)
+[![GitHub](https://img.shields.io/badge/GitHub-CriselPy-pink?logo=github&style=flat-square)](https://github.com/CriselPy)
 [![GitHub stars](https://img.shields.io/github/stars/CriselPy/Final_Project_Advanced_SQL_Techniques?style=social&label=Stars)](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/stargazers)
 ![Build Status](https://img.shields.io/github/workflow/status/CriselPy/Final_Project_Advanced_SQL_Techniques/CI)
-[![Codecov](https://img.shields.io/codecov/c/github/CriselPy/Final_Project_Advanced_SQL_Techniques)](https://codecov.io/github/CriselPy/Final_Project_Advanced_SQL_Techniques)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 
