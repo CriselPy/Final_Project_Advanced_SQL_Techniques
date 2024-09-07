@@ -21,9 +21,6 @@
   - [Exercise 2: Creating a View](#exercise-2-creating-a-view)
   - [Exercise 3: Creating a Stored Procedure](#exercise-3-creating-a-stored-procedure)
   - [Exercise 4: Using Transactions](#exercise-4-using-transactions)
-- [Usage Examples](#-usage-examples)
-  - [Example 1: Query to Get School Data with Safety Ratings](#example-1-query-to-get-school-data-with-safety-ratings)
-  - [Example 2: Updating School Leadership Score](#example-2-updating-school-leadership-score)
 - [File and Interaction](#-file-and-interaction)
 - [Resources](#-resources)
 - [Contributing](#-contributing)
@@ -157,7 +154,7 @@ BEGIN
 
     START TRANSACTION;  -- Start a transaction
 
-    -- Conditional update for Leaders_Icon based on the score
+    -- Conditional to update the Leaders_Icon field based on the score
     IF in_Leader_Score >= 0 AND in_Leader_Score <= 19 THEN
         UPDATE chicago_public_schools
         SET Leaders_Icon = 'Very weak'
@@ -179,13 +176,16 @@ BEGIN
         SET Leaders_Icon = 'Very strong'
         WHERE School_ID = in_School_ID;
     ELSE
-        -- Raise an error if the score is not within the allowed range
+        -- Signal an error if the score is not within the allowed range
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Invalid value for in_Leader_Score. The value must be between 0 and 99.';
     END IF;
 
-    COMMIT;  -- Confirm the transaction if everything is okay
+    COMMIT;  -- Commit the transaction if everything is okay
 END $$
+
+-- Reset the delimiter to the default value
 DELIMITER ;
+
 ```
 ### Testing the Procedure
 
@@ -208,7 +208,6 @@ Update the definition of your stored procedure. Add a generic `ELSE` clause that
 
 Update the definition of your stored procedure again. Add a statement to commit the unit of work at the end of the procedure. This is also included in the `UPDATE_LEADERS_ICON` stored procedure defined above.
 
-``
 ## 📚 Resources
 
 - [MySQL 8.0 Documentation](https://dev.mysql.com/doc/refman/8.0/en/)
