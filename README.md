@@ -72,11 +72,11 @@ The data is imported using SQL dump files, which are executed as part of the dat
 
 ## 📚 Exercises
 
-### Exercise 1: Using Joins
+## Exercise 1: Using Joins
 
-In this exercise, we explore how to join multiple tables to extract meaningful insights from the data.
+### Question 1
 
-#### Question 1: List School Names, Community Names, and Average Attendance
+Write and execute an SQL query to list the names of the schools, community names, and the average student attendance for communities with a hardship index of 98.
 ```sql
 SELECT P_SL.NAME_OF_SCHOOL, P_SL.COMMUNITY_AREA_NAME, P_SL.AVERAGE_STUDENT_ATTENDANCE
 FROM chicago_public_schools AS P_SL
@@ -84,7 +84,9 @@ LEFT JOIN chicago_socioeconomic_data AS socio
 ON P_SL.COMMUNITY_AREA_NAME = socio.COMMUNITY_AREA_NAME
 WHERE socio.HARDSHIP_INDEX = 98;
 ```
-#### Question 2: List Crimes That Took Place at a School
+### Question 2
+
+Write and execute an SQL query to list all crimes that occurred in a school. Include the case number, type of crime, and the name of the community.
 ```sql
 SELECT ch_crime.CASE_NUMBER, ch_crime.PRIMARY_TYPE, socio.COMMUNITY_AREA_NAME
 FROM chicago_crime AS ch_crime
@@ -96,9 +98,9 @@ ORDER BY ch_crime.CASE_NUMBER, socio.COMMUNITY_AREA_NAME;
 ```
 ### Exercise 2: Creating a View
 
-Create a view to ensure privacy and restrict access to sensitive information in the database.
+**Question 1:**
 
-#### Creating the View
+Create a view showing specific columns with new names.
 ```sql
 CREATE VIEW Chicago_p_schools_v AS
 SELECT NAME_OF_SCHOOL AS School_Name,
@@ -110,11 +112,21 @@ SELECT NAME_OF_SCHOOL AS School_Name,
        Teachers_Icon AS Teachers_Rating
 FROM chicago_public_schools;
 ```
-### Exercise 3: Creating a Stored Procedure
+### Verifying the View
 
-This exercise focuses on creating a stored procedure to update scores and their corresponding icons in the `chicago_public_schools` table.
+To verify the view and return all columns:
+```sql
+SELECT * FROM Chicago_p_schools_v;
+```
+To return only the school name and the leaders rating:
+```sql
+SELECT School_Name, Leaders_Rating FROM Chicago_p_schools_v;
+```
+## Exercise 3: Creating a Stored Procedure
 
-#### Creating the Stored Procedure
+### Question 1
+
+Write the structure of a query to create or replace a stored procedure called `UPDATE_LEADERS_SCORE`.
 ```sql
 DELIMITER $$
 CREATE PROCEDURE UPDATE_LEADERS_SCORE(IN in_School_ID INT, IN in_Leader_Score INT)
@@ -125,12 +137,13 @@ BEGIN
 END $$
 DELIMITER ;
 ```
-### Exercise 4: Using Transactions
+### Question 2
 
-Modify the stored procedure to handle transactions and ensure data integrity.
+Within your stored procedure, write an SQL statement to update the `Leaders_Score` field. This is already included in the procedure above.
 
-#### Creating the Stored Procedure with Transactions
+### Question 3
 
+Within your stored procedure, write an `IF` statement to update the `Leaders_Icon` field.
 ```sql
 DELIMITER $$
 CREATE PROCEDURE UPDATE_LEADERS_ICON(IN in_School_ID INT, IN in_Leader_Score INT)
@@ -138,13 +151,13 @@ BEGIN
     -- Exception handling
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
-        ROLLBACK;  -- Undo changes if an error occurs
+        ROLLBACK;  -- Undo changes in case of error
         RESIGNAL;  -- Propagate the error
     END;
 
-    START TRANSACTION;  -- Begin a transaction
+    START TRANSACTION;  -- Start a transaction
 
-    -- Conditional logic to update Leaders_Icon based on score
+    -- Conditional update for Leaders_Icon based on the score
     IF in_Leader_Score >= 0 AND in_Leader_Score <= 19 THEN
         UPDATE chicago_public_schools
         SET Leaders_Icon = 'Very weak'
@@ -166,28 +179,36 @@ BEGIN
         SET Leaders_Icon = 'Very strong'
         WHERE School_ID = in_School_ID;
     ELSE
-        -- Signal an error if the score is out of range
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Invalid value for in_Leader_Score. Value must be between 0 and 99.';
+        -- Raise an error if the score is not within the allowed range
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Invalid value for in_Leader_Score. The value must be between 0 and 99.';
     END IF;
 
-    COMMIT;  -- Commit the transaction if all goes well
+    COMMIT;  -- Confirm the transaction if everything is okay
 END $$
 DELIMITER ;
 ```
-## 💡 Usage Examples
+### Testing the Procedure
 
-Provide sample queries or use cases that show how to apply the exercises or stored procedures in real scenarios.
+Test the procedure with valid and invalid data:
 
-#### Example 1: Query to Get School Data with Safety Ratings
 ```sql
-SELECT * FROM Chicago_p_schools_v WHERE Safety_Rating = 'Strong';
-```
-#### Example 2: Updating School Leadership Score
-```sql
--- Call the stored procedure to update the leadership score of a school with ID 101 to 85
-CALL UPDATE_LEADERS_SCORE(101, 85);
+CALL UPDATE_LEADERS_ICON(610185, 50); -- Valid score
+````
 
+```sql
+CALL UPDATE_LEADERS_ICON(610185, 101); -- Invalid score
 ```
+## Exercise 4: Using Transactions
+
+### Question 1
+
+Update the definition of your stored procedure. Add a generic `ELSE` clause that performs a rollback of the current work if the score does not fit into any of the previous categories. This is already included in the `UPDATE_LEADERS_ICON` stored procedure defined above.
+
+### Question 2
+
+Update the definition of your stored procedure again. Add a statement to commit the unit of work at the end of the procedure. This is also included in the `UPDATE_LEADERS_ICON` stored procedure defined above.
+
+``
 ## 📚 Resources
 
 - [MySQL 8.0 Documentation](https://dev.mysql.com/doc/refman/8.0/en/)
