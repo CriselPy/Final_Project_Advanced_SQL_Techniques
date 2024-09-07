@@ -242,9 +242,17 @@ The data is imported using these SQL dump files, which are executed as part of t
 
 ## 🤝 Contributing
 
-This project is a personal solution to an exercise from the Advanced SQL Techniques course provided by IBM. Since it was worked on individually, there are no external contributions included. However, if you have suggestions to improve the exercises or find errors in the queries and procedures, please feel free to open an issue to discuss potential improvements.
+Este proyecto es una solución personal a un ejercicio del curso "Técnicas avanzadas de SQL" de IBM. Dado que se trabajó de forma individual, no se incluyen contribuciones externas. Sin embargo, ¡las contribuciones son bienvenidas!
 
-If you wish to share your own solutions or approaches to these exercises, you are welcome to do so in the repository comments. I appreciate any constructive feedback that can help enhance the content.
+Si tienes sugerencias para mejorar los ejercicios, encuentras errores en las consultas o procedimientos, o tienes ideas para añadir nuevas funcionalidades, te invito a contribuir. Puedes hacerlo de las siguientes maneras:
+
+- **Abrir un Issue:** Si encuentras un error o tienes una sugerencia, abre un [issue](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/issues) para discutirlo.
+- **Enviar un Pull Request:** Si has realizado mejoras en el código o has corregido algún problema, siéntete libre de enviar un pull request.
+- **Compartir Soluciones Propias:** Si deseas compartir tus propias soluciones o enfoques para los ejercicios, puedes hacerlo en los comentarios del repositorio.
+
+Agradezco cualquier comentario constructivo que pueda ayudar a mejorar el contenido. Tu colaboración será reconocida y apreciada.
+
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-6495ed.svg)](#-contributing)
 
 ## ✍️ Author
 
