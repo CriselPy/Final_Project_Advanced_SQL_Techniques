@@ -7,7 +7,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Cristina_Ortega-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/cristina-ortega-451750275/)
 [![GitHub](https://img.shields.io/badge/GitHub-CriselPy-pink?logo=github&style=flat-square)](https://github.com/CriselPy)
 [![GitHub stars](https://img.shields.io/github/stars/CriselPy/Final_Project_Advanced_SQL_Techniques?style=social&label=Stars)](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/stargazers)
-![Issues](https://img.shields.io/github/issues/CriselPy/Final_Project_Advanced_SQL_Techniques?style=flat-square&color=673ab7)
+[![Issues](https://img.shields.io/github/issues/CriselPy/Final_Project_Advanced_SQL_Techniques?style=flat-square&color=673ab7)](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/issues)
 
 
 
@@ -24,8 +24,8 @@
 - [Usage Examples](#usage-examples)
   - [Example 1: Query to Get School Data with Safety Ratings](#example-1-query-to-get-school-data-with-safety-ratings)
   - [Example 2: Updating School Leadership Score](#example-2-updating-school-leadership-score)
-- [Resources](#resources)
 - [File and Interaction](#file-and-interaction)
+- [Resources](#resources)
 - [Contributing](#contributing)
 - [Author](#author)
 - [License](#license)
@@ -203,9 +203,31 @@ To complete the exercises and setups described in this project, you can use the 
 
 ### Link to the File
 
-- [final_project.sql](https://github.com/CriselPy/advanced-sql-techniques/blob/main/final_project.sql)
+- [final_project.sql]((https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/final_project.sql)
+## 📂 File and Interaction
 
-### How to Interact with the File
+The following files are included in this repository:
+
+- **[`chicago_public_schools.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/sql/chicago_public_schools.sql)**: Contains the SQL commands to create and populate the `chicago_public_schools` table.
+- **[`chicago_socioeconomic_data.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/sql/chicago_socioeconomic_data.sql)**: Contains the SQL commands to create and populate the `chicago_socioeconomic_data` table.
+- **[`chicago_crime.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/sql/chicago_crime.sql)**: Contains the SQL commands to create and populate the `chicago_crime` table.
+
+The data is imported using these SQL dump files, which are executed as part of the database setup.
+
+### How to Use the Files
+
+1. **Download the Files:**
+   - Click on the links above to download each SQL file.
+
+2. **Import the SQL Files into MySQL Workbench:**
+   - Open MySQL Workbench and connect to your MySQL server.
+   - Go to `File > Open SQL Script` and select the downloaded `.sql` files in the order listed above.
+   - Execute each script to create the tables and load the data into your database.
+
+3. **Verify the Database Setup:**
+
+
+   - After importing the SQL files, verify that the tables `chicago_public_schools`, `chicago_socioeconomic_data`, and `chicago_crime` are correctly created and populated with data.
 
 1. **Download the file:**
    - Click the link to download the `final_project.sql` file to your local machine.
