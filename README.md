@@ -1,8 +1,8 @@
 # Advanced SQL Techniques - Final Project
 
-![MySQL](https://img.shields.io/badge/MySQL-v8.0-3f51b5.svg)
-![Workbench](https://img.shields.io/badge/Workbench-v8.0.25-lightblue.svg)
-![License](https://img.shields.io/badge/license-MIT-purple.svg)
+[![MySQL](https://img.shields.io/badge/MySQL-v8.0-3f51b5.svg)](https://www.mysql.com/)
+[![Workbench](https://img.shields.io/badge/Workbench-v8.0.25-lightblue.svg)](https://dev.mysql.com/downloads/workbench/)
+[![License](https://img.shields.io/badge/license-MIT-purple.svg)](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/LICENSE/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-6495ed.svg)](#-contributing)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Cristina_Ortega-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/cristina-ortega-451750275/)
 [![GitHub](https://img.shields.io/badge/GitHub-CriselPy-pink?logo=github&style=flat-square)](https://github.com/CriselPy)
