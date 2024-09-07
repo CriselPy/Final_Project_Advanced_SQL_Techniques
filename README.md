@@ -203,14 +203,14 @@ To complete the exercises and setups described in this project, you can use the 
 
 ### Link to the File
 
-- [final_project.sql]((https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/final_project.sql)
+- [final_project.sql](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/final_project.sql)
 ## 📂 File and Interaction
 
 The following files are included in this repository:
 
-- **[`chicago_public_schools.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/sql/chicago_public_schools.sql)**: Contains the SQL commands to create and populate the `chicago_public_schools` table.
-- **[`chicago_socioeconomic_data.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/sql/chicago_socioeconomic_data.sql)**: Contains the SQL commands to create and populate the `chicago_socioeconomic_data` table.
-- **[`chicago_crime.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/sql/chicago_crime.sql)**: Contains the SQL commands to create and populate the `chicago_crime` table.
+- **[`chicago_public_schools.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/chicago_public_schools.sql)**: Contains the SQL commands to create and populate the `chicago_public_schools` table.
+- **[`chicago_socioeconomic_data.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/chicago_socioeconomic_data.sql)**: Contains the SQL commands to create and populate the `chicago_socioeconomic_data` table.
+- **[`chicago_crime.sql`](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/blob/main/chicago_crime.sql)**: Contains the SQL commands to create and populate the `chicago_crime` table.
 
 The data is imported using these SQL dump files, which are executed as part of the database setup.
 
