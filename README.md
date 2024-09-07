@@ -242,15 +242,15 @@ The data is imported using these SQL dump files, which are executed as part of t
 
 ## 🤝 Contributing
 
-Este proyecto es una solución personal a un ejercicio del curso "Técnicas avanzadas de SQL" de IBM. Dado que se trabajó de forma individual, no se incluyen contribuciones externas. Sin embargo, ¡las contribuciones son bienvenidas!
+This project is a personal solution to an exercise from the IBM "Advanced SQL Techniques" course. Since it was completed individually, no external contributions are included. However, contributions are welcome!
 
-Si tienes sugerencias para mejorar los ejercicios, encuentras errores en las consultas o procedimientos, o tienes ideas para añadir nuevas funcionalidades, te invito a contribuir. Puedes hacerlo de las siguientes maneras:
+If you have suggestions to improve the exercises, find errors in the queries or procedures, or have ideas for adding new features, I encourage you to contribute. You can do so in the following ways:
 
-- **Abrir un Issue:** Si encuentras un error o tienes una sugerencia, abre un [issue](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/issues) para discutirlo.
-- **Enviar un Pull Request:** Si has realizado mejoras en el código o has corregido algún problema, siéntete libre de enviar un pull request.
-- **Compartir Soluciones Propias:** Si deseas compartir tus propias soluciones o enfoques para los ejercicios, puedes hacerlo en los comentarios del repositorio.
+- **Open an Issue:** If you find a bug or have a suggestion, open an [issue](https://github.com/CriselPy/Final_Project_Advanced_SQL_Techniques/issues) to discuss it.
+- **Submit a Pull Request:** If you have made improvements to the code or fixed a problem, feel free to submit a pull request.
+- **Share Your Own Solutions:** If you want to share your own solutions or approaches to the exercises, you can do so in the repository comments.
 
-Agradezco cualquier comentario constructivo que pueda ayudar a mejorar el contenido. Tu colaboración será reconocida y apreciada.
+I appreciate any constructive feedback that can help improve the content. Your contributions will be recognized and appreciated.
 
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-6495ed.svg)](#-contributing)
 
